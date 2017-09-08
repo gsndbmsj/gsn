@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="index.js"></script>
+</head>
+<body>
+	
+</body>
+</html>
+<script>  //10行10列的*
+	for(var j=1;j<=10;j++){
+		for(var i=1;i<=10;i++){
+			document.write('*');
+		}
+		document.write('<br />')
+	}
+</script>
+
+<script>   //10行10列的*
+	for(var j=1;j<=10;j++){
+		for(var i=1;i<=j;i++){
+			document.write('*');
+		}
+		document.write('<br />')
+	}
+</script>
+
+<script>   //99乘法表
+     
+	 document.write('<table border=1 cellspacing="0">')
+	   for(var i=1;i<=9;i++){
+	   	document.write('<tr>')
+	   	  for(var j=1;j<=9;j++){
+            document.write('<td>'+j+'*'+i+'='+i*j+'</td>')
+         }
+	   	document.write('</tr>')
+	   }
+
+	 document.write('</table>')
+</script>
+
+<script>  // 99乘法表隔行换色
+	 document.write('<table border=1 cellspacing="0">')
+	for(var i=1;i<=9;i++){
+		if(i%2==0){
+		document.write('<tr bgcolor="red">')
+	   	  }
+		else{
+			document.write('<tr bgcolor="green">')
+	   	  }
+		for(var j=1;j<=i;j++){
+            document.write('<td>'+j+'*'+i+'='+j*i+'</td>')
+         }
+         	document.write('</tr>')
+         	
+         }
+      document.write('</table>')
+	
+</script>
+
+<script>  // 99乘法表隔列换色
+	 document.write('<table border=1 cellspacing="0" width="500px">')
+	   for(var i=1;i<=9;i++){
+	   	document.write('<tr>')
+	   	  for(var j=1;j<=i;j++){
+	   	  	if(j%2==0)
+            document.write('<td bgcolor="red">'+j+'*'+i+'='+i*j+'&nbsp;'+'</td>')
+            else{
+            document.write('<td bgcolor="green">'+j+'*'+i+'='+i*j+'&nbsp;'+'</td>')	
+            }
+         }
+	   	document.write('</tr>')
+	   }
+
+	 document.write('</table>')
+</script>
+
+<script>  //10行10列表格
+	var table="<table border=1 cellspacing=0>"
+	  for(i=1;i<11;i++){
+	  	table += "<tr>"
+	  	  for(j=1;j<11;j++){
+	  	  	table +='<td>'+i+'*'+j+'='+i*j+'</td>'
+	  	  }
+	  	table += "</tr>"
+	  }
+	    table += "</table>"
+	  document.write(table)
+</script>
+
+<script>
+  table(6)
+  function table(rows){
+  var table='<table>'
+  for(i=1;i<rows;i++){
+  	table+='<tr>'
+  	  for(j=1;j<=2*i-1;j++){
+  	  	table+='<td>*</td>'
+
+  	  	  }
+  	  	 
+  	  }
+  	table+='</tr>'
+ 
+
+    table+='</table>'
+     document.write(table)
+	}
+</script>
+
+<script>   //金字塔
+    table(10)
+	function table(rows){
+	
+	for(var i=1;i<=rows;i++){
+		for(var j=1;j<=rows-i;j++){
+			document.write('_')
+		}
+		for(var j=1;j<=2*i-1;j++){
+			document.write('*')
+		}
+	document.write('<br />')
+	}
+}
+</script>
+
+<script>  //1 1 2 3 5 8 13 21 34 55 89 144 
+var i=1;j=1;
+	document.write(i+'&nbsp;')
+	document.write(j+'&nbsp;')
+
+	for(var k=0;k<=100;k++){
+		k=i+j;
+		document.write(k+'&nbsp;')
+		i=j;
+	    j=k;
+	}
+</script>
+
+<script>  //冒泡排序
+  var arr1=[1,2,34,4,55,63,57,8,9]
+  fn1(arr1)
+  function fn1(arr){ 
+  
+  for(var i=0;i<arr.length;i++){
+  	for(var j=i+1;j<arr.length;j++){
+  		if(arr[i]<arr[j]){
+  			var temp= arr[i];
+  			arr[i]=arr[j];
+  			arr[j]=temp;
+  		}
+  	}
+  }
+
+  	console.log(arr)
+  }
+
+</script>
+
+<script>
+	var i=1;
+	while(i<=10){
+		console.log(i);
+		i++;
+	}
+</script>
+
+<script>
+	var i=1;
+	var sum=0;
+	while(i<=10){
+		sum=sum+i;
+
+		i++;
+	}
+	console.log(sum);
+</script>
+
+<script>
+    var i=1;
+	var sum=0;
+	do{
+		sum=sum+i;
+		i++
+	}while(i<=10)
+	console.log(sum)
+	
+</script>
+
+<script>
+	for(var i=1;i<=10;i++){
+		if(i%2==1){
+			continue;
+		}
+		console.log(i)
+	}
+</script>
+
+<script>
+	for(var i=1;i<=10;i++){
+		if(i%2==0){
+			break;
+		}
+		console.log(i)
+	}
+</script>
+
+<script>  //去掉数组中的空元素
+	var arr=[1,2,3,,4,5,,6,7,,8];
+	fn2(arr)
+	function fn2(arr){
+	var newarr=[];
+	for(var i=0;i<arr.length;i++){
+		if(arr[i]!=undefined){
+			newarr[newarr.length]=arr[i];
+		}
+		
+	}
+	console.log(newarr)
+}
+
+</script>
+
+<script>  //去掉数组中的空元素
+	var arr=[1,2,3,,4,5,,6,7,,8];
+	var newarr=[];
+	for(var i=0;i<arr.length;i++){
+		if(arr[i] == undefined){
+			continue
+		}
+			newarr[newarr.length]=arr[i];
+	}
+	console.log(newarr)
+
+
+</script>
+
+
+<script>   //求二维数组的最大值
+	
+	var classes1 = [
+ 	    [70,48,49],
+  	    [56,66,99],
+  	    [78,35,78]
+  	]
+  	fn3(classes1)
+  	function fn3(classes1){
+  	var max = classes1[0][0];
+	for(var i=0;i<classes1.length;i++){
+		for(var j=0;j<classes1[i].length;j++){
+			if (max<classes1[i][j]){
+				max=classes1[i][j];
+			}
+		}
+	}
+	console.log(max)
+}
+</script>
+
+<script>   //rows行 cols列的表格
+   table(10,10);
+	 function table(rows,cols){
+	  	var table="<table border=1 cellspacing=0>"
+	      for(i=1;i<rows;i++){
+	      	table += "<tr>"
+	     	  for(j=1;j<cols;j++){
+	      	  	table +='<td>'+i+'*'+j+'='+i*j+'</td>'
+	      	  }
+    	table += "</tr>"
+	      }
+       table += "</table>"
+	   document.write(table)
+
+	  }
+</script>
+
+<script>
+	arr=[2,3,5,6,7,8]
+	var result=filter1(arr)
+	console.log(result)
+</script>
+<script>  //自调用函数
+	// (function(){
+	// 	alert(1)
+	// })()
+</script>
+
+<script>  //任意数组最大值
+	function max(arr){
+		var num=arr[0]
+		for(var i=0;i<arr.length;i++){
+			if(arr[i]>num){
+				num=arr[i]
+			}
+		}
+		console.log(num)
+
+	}
+	max([1,2,4,6,7])
+</script>
+
+ 
+
+<script>    //形参比实参多的情况   第三个输出undefined
+	var fn=function(i,j,k){
+		console.log(i,j,k)
+	}
+	fn(1,2)
+</script>
+
+<script>  //arguments  每个函数内部都有 用来保存函数调用时实参的详细信息   只能在函数内部进行调用
+	var fn=function(i,j){
+		console.log(arguments)
+		console.log(arguments.length) 
+
+	}
+	fn(1,2,3,4,5,6,7,8,9)
+</script>
+
+<script>  //在数组后面添加任意一个数组元素
+  arr=[1,2,3,4,5,7]
+  push(arr,'a','b','c')
+  function push(arr){
+  	for(var i=1;i<arguments.length;i++){
+  		arr[arr.length]=arguments[i]
+  	}
+     console.log(arr)
+  }
+	
+</script>
+
+<script>
+  arr=[1,2,3,4,5,6]
+  sort(arr,'<')
+  function sort(arr,type){
+	//方法一
+	if(type==undefined){
+		 
+		sortUP(arr)
+	}else{
+
+
+		if(type=='<'){
+	  	sortUP(arr)
+	  }else if(type=='>'){
+	  	sortDown(arr)
+	  }
+
+
+
+	}
+
+   //方法二
+	// if(type=='<'){
+	// 	sortUP(arr)
+	// }else if(type=='>'){
+	// 	sortDown(arr)
+	// }
+
+ 
+	//方法三
+	// type=type==undefined?'<':type;
+	// if(type=='<'){
+	// 	sortUP(arr)
+	// }else if(type=='>'){
+	// 	sortDown(arr)
+	// }
+ 
+	//方法四
+	// type='<'||type;
+	// if(type=='<'){
+	// 	sortUP(arr)
+	// }else if(type=='>'){
+	// 	sortDown(arr)
+	// }
+}
+
+function sortUP(arr){
+   for(var i=0;i<arr.length;i++){
+  	for(var j=i+1;j<arr.length;j++){
+  		if(arr[i]>arr[j]){
+  			var temp= arr[i];
+  			arr[i]=arr[j];
+  			arr[j]=temp;
+  		}
+  	}
+  }
+  	console.log(arr)
+}
+
+function sortDown(arr){
+   for(var i=0;i<arr.length;i++){
+  	for(var j=i+1;j<arr.length;j++){
+  		if(arr[i]<arr[j]){
+  			var temp= arr[i];
+  			arr[i]=arr[j];
+  			arr[j]=temp;
+  		}
+  	}
+  }
+  	console.log(arr)
+}
+</script>
+
+<!-- 默认参数
+参数：传值，就会用它传进来的值    不传，给他一个默认值
+四种方法
+1.分支
+if(type==undefined){
+		 
+		type=='<'
+	}else{
+		if(type=='<'){
+	  	sortUP(arr)
+	  }else if(type=='>'){
+	  	sortDown(arr)
+	  }
+	}
+2.三元表达式
+type=type==undefined?'<':type;
+	  if(type=='<'){
+	  	sortUP(arr)
+	  }else if(type=='>'){
+	  	sortDown(arr)
+	  }
+3.逻辑或
+  type=type||'<';
+	  if(type=='<'){
+	 	sortUP(arr)
+	 }else if(type=='>'){
+	 	sortDown(arr)
+	}
+4.ES6的一种方法
+function fn(type=默认值){}
+带有默认值的参数，放置到最后，如果实参为undefined时输出默认值   如果实参为null时输出null
+ -->
+
+
+
+
+
+
+
+ <!-- rest参数
+
+用来接受剩余（没有形参对应的实参）参数   是个数组
+
+没有剩余参数   是个空数组
+
+rest参数必须在最后
+
+function fn(arr,...rest){
+
+//rest
+
+} -->
+
+<script>   //rest参数的用法
+    arr=[1,2,3,4,5,7]
+    push(arr,'a','b','c')
+    function push(arr,...value){
+    	for(var i=0;i<value.length;i++){
+    		arr[arr.length]=value[i]
+    	}
+       console.log(arr)
+   }
+	
+</script>
+
+
+
+<script>
+var arr=[1,2,4,56,7]
+var result=exist(arr,7)
+alert(result)
+   function exist(arr,value){
+   	if(!(typeof arr=='object'&&arguments.length>1)){
+   		return '输入错误';
+   	}
+   	for(var i=0;i<arr.length;i++){
+   		if(arr[i]==value){
+   			return true
+   		}
+   	}
+   	return false
+   }
+	
+</script>
+
+<script>  //将数组转换成字符串
+	var arr=[3,5,6,8,4,3]
+	join(arr)
+	function join(arr,str){
+		str=str==undefined?'-':str
+		var result='';
+		for(var i=0;i<arr.length;i++){
+			if(i<arr.length-1){
+			result+=arr[i]+str
+				}else{
+					result+=arr[i] 
+				}
+		}
+		return result;
+
+
+	}
+</script>
+
+
+<script>
+	function aa(){
+		var num=10;
+		alert(num)
+		bb()
+		function bb(){
+			alert(num)
+			var num=15
+			alert(num)
+		}
+	}
+	aa()      //  10  undefined  15
+</script>
+
+<script>
+	function aa(){
+		var num=10;
+		alert(num)
+		bb()
+		function bb(){
+			alert(num)
+			num=15
+			alert(num)
+		}
+	}
+	aa()      //  10  10  15
+</script>
+
+<script>
+	function aa(num1,num2){
+		return num1*2+num2
+	}
+	function bb(num1,num2){
+		return num1*num2
+	}
+	function cc(num1,num2){
+		return num1-num2
+	}
+	function math(num1,num2,fn){
+		return fn(num1,num2)
+	}
+	var result=math(1,2,aa)
+	var result=math(1,2,bb)
+	var result=math(1,2,cc)
+	console.log(result)
+</script>
+
+
+
+
+<script>
+var arr=[1,3,4,5,6]
+var result=map(arr,function(value) {
+	return value*2
+})
+console.log(result)
+</script>
+
+
+
+
+
+<script>
+var arr=[1,3,4,5,6]
+var result=filter(arr,function(value) {
+	return value%2==1
+})
+console.log(result)
+</script>
